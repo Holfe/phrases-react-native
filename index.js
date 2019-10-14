@@ -1,45 +1,36 @@
 //Imports
 import React from 'react';
-import {AppRegistry, View, TouchableOpacity, Text} from 'react-native';
+import {AppRegistry, View, ImageBackground, Text} from 'react-native';
 
 //Format
 
 const Style = {
   viewStyle: {
-    paddingTop: 40,
-    margin: 20,
+    margin: 5,
   },
-  btn: {
-    backgroundColor: '#d1a',
-    borderColor: '#91a',
-    borderWidth: 3,
-    borderRadius: 5,
-    padding: 10,
-    shadowColor: '#000',
-    shadowOffset: {width: 0, height: 2},
-    shadowOpacity: 0.4,
+  imgStyle: {
+    width: 300,
+    height: 300,
+    justifyContent: 'flex-end',
   },
-  btnText: {
-    color: '#fff',
-    fontSize: 18,
+  textStyle: {
+    color: '#c1f',
+    backgroundColor: '#fff',
+    fontSize: 20,
+    width: 300,
     fontWeight: 'bold',
-    alignSelf: 'center',
+    textAlign: 'center',
   },
 };
 
-const press = () => {
-  // eslint-disable-next-line no-alert
-  alert('Pressionado!');
-}
-
 //Components
 const App = () => {
-  const {viewStyle, btn, btnText} = Style;
+  const {viewStyle, imgStyle, textStyle} = Style;
   return (
     <View style={viewStyle}>
-      <TouchableOpacity style={btn}>
-        <Text style={btnText}>Press Me</Text>
-      </TouchableOpacity>
+      <ImageBackground source={require('./img/uvas.png')} style={imgStyle}>
+        <Text style={textStyle}>Legenda da Foto</Text>
+      </ImageBackground>
     </View>
   );
 };
